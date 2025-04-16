@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Django files
+*/__pycache__/*
+
+# Python virtual environment
+.venv/*
