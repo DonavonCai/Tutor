@@ -6,12 +6,12 @@ import { NotFound } from "./pages/NotFound";
 import { ProtectedRoute } from "./components/ProtectedRoutes";
 
 function Logout() {
-    localStorage.clear();
+    // localStorage.clear();
     return <Navigate to="/login" />;
 }
 
 function RegisterAndLogout() {
-    localStorage.clear();
+    // localStorage.clear();
     return <Register />;
 }
 

@@ -1,12 +1,13 @@
-import axios from "axios";
-import { ACCESS_TOKEN } from "../constants";
+import axios, { InternalAxiosRequestConfig } from "axios";
 
-const api = axios.create({
+const ACCESS_TOKEN = "access";
+
+const apiClient = axios.create({
     baseURL: import.meta.env.VITE_API_URL,
 });
 
-api.interceptors.request.use(
-    (config) => {
+apiClient.interceptors.request.use(
+    (config: InternalAxiosRequestConfig) => {
         const token = localStorage.getItem(ACCESS_TOKEN);
         if (token) {
             config.headers.Authorization = "Bearer ${token}";
@@ -18,4 +19,4 @@ api.interceptors.request.use(
     }
 );
 
-export default api;
+export default apiClient;
