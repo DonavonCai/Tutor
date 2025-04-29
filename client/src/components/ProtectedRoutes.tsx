@@ -1,10 +1,12 @@
 import { ReactNode, useEffect, memo } from "react";
 import { Navigate } from "react-router";
 import { jwtDecode, JwtPayload } from "jwt-decode";
-import api from "../api/api";
-import { REFRESH_TOKEN, ACCESS_TOKEN } from "../constants";
+import apiClient from "../services/api-client";
 import { useCallback, useState } from "react";
 import { AxiosResponse } from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { getAccessToken, setAccessToken } from "../state/store";
+import { IAppState } from "../state/types/app-state";
 
 interface IProps {
     children: ReactNode;
@@ -14,18 +16,26 @@ export const ProtectedRoute = memo((props: IProps) => {
     const { children } = props;
     const [isAuthorized, setIsAuthorized] = useState<boolean | null>(null);
 
+    const refreshToken = "";
+    const accessToken = useSelector((state: IAppState) =>
+        getAccessToken(state)
+    );
+
+    const dispatch = useDispatch();
+
     //#region Refresh token callback
     const refresh = useCallback(async () => {
-        const refreshToken = localStorage.getItem(REFRESH_TOKEN);
         try {
-            const response: AxiosResponse = await api.post(
+            const response: AxiosResponse = await apiClient.post(
                 "/api/token/refresh",
                 {
                     refresh: refreshToken,
                 }
             );
             if (response.status === 200) {
-                localStorage.setItem(ACCESS_TOKEN, response.data.access);
+                console.log("");
+                dispatch(setAccessToken(response.data.access));
+                // localStorage.setItem(ACCESS_TOKEN, response.data.access);
                 setIsAuthorized(true);
             } else {
                 setIsAuthorized(false);
@@ -39,13 +49,12 @@ export const ProtectedRoute = memo((props: IProps) => {
 
     //#region Authorization callback
     const auth = useCallback(async () => {
-        const token = localStorage.getItem(ACCESS_TOKEN);
-        if (!token) {
+        if (!accessToken) {
             setIsAuthorized(false);
             return;
         }
 
-        const decoded: JwtPayload = jwtDecode(token);
+        const decoded: JwtPayload = jwtDecode(accessToken);
 
         const tokenExpiration = decoded.exp as number;
         if (tokenExpiration < Date.now() / 1000) {
@@ -53,7 +62,7 @@ export const ProtectedRoute = memo((props: IProps) => {
         } else {
             setIsAuthorized(true);
         }
-    }, [refresh]);
+    }, [accessToken, refresh]);
     //#endregion
 
     // Authorize on mount
@@ -64,7 +73,6 @@ export const ProtectedRoute = memo((props: IProps) => {
     if (isAuthorized === null) {
         return <div>...Loading</div>;
     }
-    console.log(isAuthorized);
 
     return isAuthorized ? children : <Navigate to="/login" />;
 });

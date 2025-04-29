@@ -6,7 +6,7 @@ import {
     useState,
 } from "react";
 import { useNavigate } from "react-router";
-import api from "../api/api";
+import apiClient from "../services/api-client";
 
 // interface IProps {
 //     route: string;
@@ -28,7 +28,7 @@ export const RegisterForm = memo((/*props: IProps*/) => {
         console.log(password);
 
         try {
-            const res = await api.post("/api/user/register/", {
+            const res = await apiClient.post("/api/user/register/", {
                 username,
                 password,
             });
