@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router";
 import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
-import { Home } from "./pages/Home";
+import { HomePage } from "./pages/HomePage";
 import { NotFound } from "./pages/NotFound";
 import { ProtectedRoute } from "./components/ProtectedRoutes";
 
@@ -19,14 +19,7 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route
-                    path="/"
-                    element={
-                        <ProtectedRoute>
-                            <Home />
-                        </ProtectedRoute>
-                    }
-                />
+                <Route path="/" element={<HomePage />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<RegisterAndLogout />} />
                 <Route path="*" element={<NotFound />} />
