@@ -9,3 +9,9 @@ class Note(models.Model):
 
     def __str__(self):
         return self.title
+
+class Prompt(models.Model):
+    prompt = models.TextField()
+
+    def __str__(self):
+        return self.prompt
