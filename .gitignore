@@ -23,8 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 
+# Environment variables
+.env
+
 # Django files
-__pycache/
+*__pycache__/
 
 # Python virtual environment
 .venv/*
