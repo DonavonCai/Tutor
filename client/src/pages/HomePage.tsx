@@ -1,6 +1,6 @@
 import { memo } from "react";
-import { TextInput } from "../components/TextInput";
+import { ChatForm } from "../components/ChatForm/ChatForm";
 
 export const HomePage = memo(() => {
-    return <TextInput />;
+    return <ChatForm />;
 });
