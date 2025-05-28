@@ -8,7 +8,6 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from google import genai
 from .serializers import UserSerializer, PromptSerializer
 
-
 aiClient = genai.Client(api_key=os.environ.get("AI_KEY"))
 
 class CreateUserView(generics.CreateAPIView):

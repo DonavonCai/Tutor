@@ -4,6 +4,8 @@ import { Button } from "../Button";
 import { useForm } from "react-hook-form";
 import { TextInput } from "../Inputs/TextInput";
 
+import "./ChatForm.scss";
+
 interface IChatInput {
     prompt: string;
 }
@@ -20,7 +22,7 @@ export function ChatForm() {
     //#endregion
 
     return (
-        <form method="dialog">
+        <form method="dialog" className="ChatForm">
             <TextInput labelText="Prompt" {...register("prompt")} />
             <Button onClick={handleSubmit(onSubmit)} icon={faArrowUp} />
         </form>

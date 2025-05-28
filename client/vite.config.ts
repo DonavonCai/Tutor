@@ -8,7 +8,6 @@ export default defineConfig({
     build: {
         manifest: "manifest.json",
         emptyOutDir: true,
-        outDir: "../server/assets",
     },
     server: {
         cors: {

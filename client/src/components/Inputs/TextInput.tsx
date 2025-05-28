@@ -1,4 +1,4 @@
-import { memo, useId } from "react";
+import { memo, useId, useMemo } from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
 
 interface IProps {
@@ -6,28 +6,30 @@ interface IProps {
     name?: string;
     minLength?: number;
     maxLength?: number;
-    placeholder?: string;
     register?: UseFormRegisterReturn;
+    className?: string;
 }
 
 export const TextInput = memo((props: IProps) => {
-    const { labelText, name, minLength, maxLength, placeholder, register } =
+    const { labelText, name, minLength, maxLength, register, className } =
         props;
 
     // Generate a unique ID for the element
     const uniqueId = useId();
 
+    const classes = useMemo(() => {
+        return className === undefined ? "TextInput" : "TextInput " + className;
+    }, []);
+
     return (
-        <>
-            <label>{labelText}</label>
-            <textarea
-                id={uniqueId}
-                name={name}
-                minLength={minLength}
-                maxLength={maxLength}
-                placeholder={placeholder}
-                {...register}
-            />
-        </>
+        <textarea
+            className={classes}
+            id={uniqueId}
+            name={name}
+            minLength={minLength}
+            maxLength={maxLength}
+            placeholder={labelText}
+            {...register}
+        />
     );
 });
