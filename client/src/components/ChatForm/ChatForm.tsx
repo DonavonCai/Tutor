@@ -6,6 +6,8 @@ import { TextInput } from "../sdk/Inputs/TextInput";
 
 import "./ChatForm.scss";
 
+import "./ChatForm.scss";
+
 interface IChatInput {
     prompt: string;
 }
