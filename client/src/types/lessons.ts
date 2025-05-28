@@ -5,5 +5,5 @@
 
 export interface ILessonOverview {
     title: string;
-    contents: string[];
+    sections: string[];
 }

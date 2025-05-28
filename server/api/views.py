@@ -22,6 +22,16 @@ class PromptView(APIView):
     def post(self, request):
         print(request.data)
 
-        response = aiClient.models.generate_content(model="gemini-2.0-flash", contents="Explain how AI works in a few words")
+        # response = aiClient.models.generate_content(model="gemini-2.0-flash", contents="Explain how AI works in a few words")
+        test_plan = {
+            "title": "Introductory Music Theory: The Building Blocks of Music",
+            "sections": [
+                "What is Music Theory?",
+                "The Staff and Clefs",
+                "Pitch and Notes",
+                "Rhythm: Notes and Rests",
+                "Measures and Time Signatures",
+            ]
+		}
 
-        return Response({"message": response.text}, status=status.HTTP_200_OK)
+        return Response(test_plan, status=status.HTTP_200_OK)
