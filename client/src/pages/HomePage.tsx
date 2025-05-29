@@ -1,8 +1,14 @@
-import { memo } from "react";
-// import { getTestService } from "../services/test-service";
-import { ChatForm } from "../components/ChatForm/ChatForm";
+import { ReactElement, useEffect } from "react";
+import { getLessons } from "../services/get-lessons";
+import { useService } from "../api/use-service";
+import { LessonCard } from "../components/LessonCard/LessonCard";
+import { Page } from "./Page";
 
-export const HomePage = memo(() => {
-    // getTestService();
-    return <ChatForm />;
-});
+export function HomePage(): ReactElement {
+    const [executeGetLessons, loading] = useService(getLessons);
+    useEffect(() => {
+        executeGetLessons();
+    }, [executeGetLessons]);
+
+    return loading ? <Page /> : <Page>{!loading && <LessonCard />}</Page>;
+}

@@ -1,8 +1,8 @@
 import { useCallback } from "react";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
-import { Button } from "../Button";
+import { Button } from "../sdk/Buttons";
 import { useForm } from "react-hook-form";
-import { TextInput } from "../Inputs/TextInput";
+import { TextInput } from "../sdk/Inputs/TextInput";
 
 import "./ChatForm.scss";
 
