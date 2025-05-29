@@ -1,0 +1,5 @@
+@use "../../../styles/globals/Colors.scss" as colors;
+
+.Card {
+    background-color: colors.$card-color;
+}
