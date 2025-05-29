@@ -1,11 +1,11 @@
 import { ReactElement } from "react";
 
-import "./LessonCard.scss";
 import { Card } from "../sdk";
+import "./LessonCard.scss";
 
 export function LessonCard(): ReactElement {
     return (
-        <Card>
+        <Card cssClasses={["LessonCard"]}>
             <p>Hi</p>
         </Card>
     );
