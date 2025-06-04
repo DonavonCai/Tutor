@@ -34,4 +34,19 @@ class PromptView(APIView):
             ]
 		}
 
-        return Response(test_plan, status=status.HTTP_200_OK)
+        test_plan_2 = {
+            "title": "Blah blah lesson 2",
+            "sections": [
+                "What is Music Theory?",
+                "The Staff and Clefs",
+                "Pitch and Notes",
+                "Rhythm: Notes and Rests",
+                "Measures and Time Signatures",
+            ]
+        }
+
+        response = {
+            "plans": [test_plan, test_plan_2]
+        }
+
+        return Response(response, status=status.HTTP_200_OK)

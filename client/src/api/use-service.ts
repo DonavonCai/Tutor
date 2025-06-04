@@ -8,7 +8,7 @@ import { useCallback, useState } from "react";
  * @returns A callback function to execute the service and a loading flag.
  */
 
-export function useService<Response, Request = void>(
+export function useService<Response, Request>(
     service: (request: Request) => Promise<Response>,
     onSuccess?: (arg: Response) => void
 ): [(request: Request) => void, boolean] {
