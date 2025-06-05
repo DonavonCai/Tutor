@@ -3,8 +3,7 @@ import { getLessons, IGetLessonsResponse } from "../services/get-lessons";
 import { useService } from "../api/use-service";
 import { Page } from "./Page";
 import { useDispatch, useSelector } from "react-redux";
-import { getPlans } from "../state/store";
-import { savePlans } from "../state/slices/create-plan-slice";
+import { getPlans, savePlans } from "../state/store";
 import { LessonCardsContainer } from "../components/LessonCard/LessonCardsContainer";
 
 export function HomePage(): ReactElement {

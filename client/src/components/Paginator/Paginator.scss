@@ -1,0 +1,18 @@
+.Paginator {
+    border: 1px solid red;
+    width: 80%;
+}
+
+.paginatorChildren {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: repeat(2, 2fr);
+    overflow-y: hidden;
+    grid-auto-rows: auto;
+}
+
+.paginatorButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}

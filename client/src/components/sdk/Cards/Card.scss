@@ -1,6 +1,12 @@
 @use "../../../styles/globals/Colors.scss" as colors;
 
 .Card {
-    background-color: colors.$card-color;
+    background-color: colors.$primary-color;
     border-radius: 10px;
+    padding: 1%;
+}
+
+.CardTitle {
+    font-size: xx-large;
+    font-weight: bold;
 }

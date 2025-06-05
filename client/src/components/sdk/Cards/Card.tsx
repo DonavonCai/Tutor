@@ -5,12 +5,18 @@ import { useCombineCssClasses } from "../../../api/use-combine-css-classes";
 
 interface IProps {
     children: ReactElement;
+    title: string;
     cssClasses?: string[];
 }
 
 export const Card = memo((props: IProps) => {
-    const { children, cssClasses } = props;
+    const { title, children, cssClasses } = props;
 
     const classes = useCombineCssClasses("Card", cssClasses);
-    return <div className={classes}>{children}</div>;
+    return (
+        <article className={classes}>
+            <header className="CardTitle">{title}</header>
+            {children}
+        </article>
+    );
 });

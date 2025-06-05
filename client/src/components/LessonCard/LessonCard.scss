@@ -1,5 +1,22 @@
 @use "../../styles/globals/Colors.scss" as colors;
 
 .LessonCard {
-    width: 40%;
+    width: 60%;
+    margin: 0 auto;
+
+    .lessonContentsContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .lessonContents {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5em;
+        margin-top: 1em;
+
+        p {
+            margin: 0;
+        }
+    }
 }
