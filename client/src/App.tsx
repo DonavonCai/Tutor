@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router";
-import { Login } from "./pages/Login";
+import { LoginPage } from "./pages/LoginPage";
 import { Register } from "./pages/Register";
 import { HomePage } from "./pages/HomePage";
 import { NotFound } from "./pages/NotFound";
@@ -16,7 +16,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/hub" element={<LessonHubPage />} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterAndLogout />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
