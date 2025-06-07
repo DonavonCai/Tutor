@@ -1,12 +1,12 @@
 import { ReactElement, useCallback, useMemo, useState } from "react";
-import { Button } from "../sdk";
+import { Button, ITakeCssClasses } from "../sdk";
 
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 import "./Paginator.scss";
 import { useCombineCssClasses } from "../../api/use-combine-css-classes";
 
-interface IProps {
+interface IProps extends ITakeCssClasses {
     children: ReactElement[];
     cssClasses?: string[];
 }

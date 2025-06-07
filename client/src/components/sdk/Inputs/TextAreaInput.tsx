@@ -3,15 +3,15 @@ import { UseFormRegisterReturn } from "react-hook-form";
 
 interface IProps
     extends React.DetailedHTMLProps<
-        React.InputHTMLAttributes<HTMLInputElement>,
-        HTMLInputElement
+        React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+        HTMLTextAreaElement
     > {
     labelText: string;
     register?: UseFormRegisterReturn;
     className?: string;
 }
 
-export const TextInput = memo((props: IProps) => {
+export const TextAreaInput = memo((props: IProps) => {
     const { labelText, register, className, ...passThroughProps } = props;
 
     // Generate a unique ID for the element
@@ -22,7 +22,7 @@ export const TextInput = memo((props: IProps) => {
     }, []);
 
     return (
-        <input
+        <textarea
             className={classes}
             id={uniqueId}
             placeholder={labelText}

@@ -2,11 +2,11 @@ import { useCallback } from "react";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "../sdk/Buttons";
 import { useForm } from "react-hook-form";
-import { TextInput } from "../sdk/Inputs/TextInput";
 
 import "./ChatForm.scss";
 
 import "./ChatForm.scss";
+import { TextAreaInput } from "../sdk/Inputs/TextAreaInput";
 
 interface IChatInput {
     prompt: string;
@@ -25,7 +25,7 @@ export function ChatForm() {
 
     return (
         <form method="dialog" className="ChatForm">
-            <TextInput labelText="Prompt" {...register("prompt")} />
+            <TextAreaInput labelText="Prompt" {...register("prompt")} />
             <Button onClick={handleSubmit(onSubmit)} icon={faArrowUp} />
         </form>
     );

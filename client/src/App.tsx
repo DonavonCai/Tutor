@@ -3,6 +3,7 @@ import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
 import { HomePage } from "./pages/HomePage";
 import { NotFound } from "./pages/NotFound";
+import { LessonHubPage } from "./pages/LessonHubPage";
 
 function RegisterAndLogout() {
     // localStorage.clear();
@@ -14,6 +15,7 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<HomePage />} />
+                <Route path="/hub" element={<LessonHubPage />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<RegisterAndLogout />} />
                 <Route path="*" element={<NotFound />} />

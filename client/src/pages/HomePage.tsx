@@ -1,32 +1,13 @@
-import { ReactElement, useCallback, useEffect } from "react";
-import { getLessons, IGetLessonsResponse } from "../services/get-lessons";
-import { useService } from "../api/use-service";
+import { ReactElement } from "react";
 import { Page } from "./Page";
-import { useDispatch, useSelector } from "react-redux";
-import { getPlans, savePlans } from "../state/store";
-import { LessonCardsContainer } from "../components/LessonCard/LessonCardsContainer";
+import { Link } from "react-router";
 
 export function HomePage(): ReactElement {
-    const dispatch = useDispatch();
-    const plans = useSelector(getPlans);
-
-    const onSuccess = useCallback(
-        (response: IGetLessonsResponse) => {
-            dispatch(savePlans(response.plans));
-        },
-        [dispatch]
-    );
-
-    const [executeGetLessons, loading] = useService(getLessons, onSuccess);
-    useEffect(() => {
-        executeGetLessons({
-            prompt: "blah",
-        });
-    }, [executeGetLessons]);
-
-    return loading ? (
-        <Page />
-    ) : (
-        <Page>{!loading && <LessonCardsContainer plans={plans} />}</Page>
+    return (
+        <Page>
+            <nav>
+                <Link to="/login">Login</Link>
+            </nav>
+        </Page>
     );
 }
