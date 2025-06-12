@@ -25,7 +25,8 @@
         /* Import config */
         "baseUrl": ".",
         "paths": {
-            "@utils": ["./src/utils"]
+            "@utils": ["./src/utils"],
+            "@styles": ["./src/styles"]
         }
     },
     "include": ["src"]

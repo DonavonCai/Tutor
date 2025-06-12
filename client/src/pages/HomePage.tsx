@@ -7,7 +7,6 @@ export function HomePage(): ReactElement {
         <Page>
             <nav>
                 <Link to="/login">Login</Link>
-                <p className="underline">hi</p>
             </nav>
         </Page>
     );

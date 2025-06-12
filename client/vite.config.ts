@@ -9,6 +9,7 @@ export default defineConfig({
     resolve: {
         alias: {
             "@utils": path.resolve(__dirname, "src/utils"),
+            "@styles": path.resolve(__dirname, "src/styles"),
         },
     },
     build: {
