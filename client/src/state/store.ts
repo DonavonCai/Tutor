@@ -13,7 +13,7 @@ export const store = configureStore({
 });
 
 //#region Export reducers
-// export { setAccessToken } from "./slices/create-token-slice";
+export { setAccessToken } from "./slices/create-token-slice";
 export { savePlans } from "./slices/create-plan-slice";
 //#endregion
 

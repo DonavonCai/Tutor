@@ -1,6 +1,6 @@
 import { ReactElement, useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useService } from "../api/use-service";
+import { useService } from "@utils";
 import { LessonCardsContainer } from "../components/LessonCard/LessonCardsContainer";
 import { IGetLessonsResponse, getLessons } from "../services/get-lessons";
 import { getPlans, savePlans } from "../state/store";

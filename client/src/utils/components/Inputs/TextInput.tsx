@@ -1,5 +1,6 @@
 import { memo, useId, useMemo } from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
+import "../../../styles/styles.scss";
 
 interface IProps
     extends React.DetailedHTMLProps<
@@ -17,8 +18,12 @@ export const TextInput = memo((props: IProps) => {
     // Generate a unique ID for the element
     const uniqueId = useId();
 
+    const baseClass = "TextInput underline";
+
     const classes = useMemo(() => {
-        return className === undefined ? "TextInput" : "TextInput " + className;
+        return className === undefined
+            ? baseClass
+            : baseClass + " " + className;
     }, []);
 
     return (

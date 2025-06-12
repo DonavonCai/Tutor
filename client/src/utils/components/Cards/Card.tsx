@@ -1,8 +1,8 @@
 import { ReactElement, memo } from "react";
 
 import "./Card.scss";
-import { useCombineCssClasses } from "../../../api/use-combine-css-classes";
-import { ITakeCssClasses } from "../types";
+import { useCombineCssClasses } from "../../api/use-combine-css-classes";
+import { ITakeCssClasses } from "../../types";
 
 interface IProps extends ITakeCssClasses {
     children: ReactElement;

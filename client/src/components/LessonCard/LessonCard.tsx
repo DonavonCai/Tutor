@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 
-import { Card } from "../sdk";
+import { Card } from "@utils";
 import { ILessonOverview } from "../../types/lessons";
 import { v4 as getUuid } from "uuid";
 

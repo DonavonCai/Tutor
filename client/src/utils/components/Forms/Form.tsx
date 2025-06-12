@@ -1,6 +1,6 @@
 import { memo, ReactElement } from "react";
-import { ITakeCssClasses } from "../types";
-import { useCombineCssClasses } from "../../../api/use-combine-css-classes";
+import { ITakeCssClasses } from "../../types";
+import { useCombineCssClasses } from "../../api/use-combine-css-classes";
 
 import "./Form.scss";
 

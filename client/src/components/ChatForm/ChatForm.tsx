@@ -1,12 +1,9 @@
 import { useCallback } from "react";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
-import { Button } from "../sdk/Buttons";
+import { Button, TextAreaInput } from "@utils";
 import { useForm } from "react-hook-form";
 
 import "./ChatForm.scss";
-
-import "./ChatForm.scss";
-import { TextAreaInput } from "../sdk/Inputs/TextAreaInput";
 
 interface IChatInput {
     prompt: string;

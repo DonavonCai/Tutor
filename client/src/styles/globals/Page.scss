@@ -1,24 +1,5 @@
 @use "Colors.scss" as colors;
 
-html {
-    height: 100vh;
-    font-family: ui-sans-serif, -apple-system, system-ui, Segoe UI, Helvetica,
-        Apple Color Emoji, Arial, sans-serif, Segoe UI Emoji, Segoe UI Symbol;
-    background-color: colors.$tertiary-color;
-}
-
-body {
-    height: 100vh;
-    margin: 0 auto;
-}
-
-#root {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
 .Page {
     height: 100vh;
     width: 85%;
