@@ -31,6 +31,7 @@ export function LoginForm(): ReactElement {
                 onClick={handleSubmit(onSubmit)}
                 icon={faSignIn}
                 tone="positive"
+                weight="primary"
             />
         </Form>
     );

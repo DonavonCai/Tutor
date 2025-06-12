@@ -1,11 +1,27 @@
+@use "@styles/globals/Colors.scss" as colors;
+
 .Button {
     background-color: inherit;
     border: none;
+    border-radius: 5px;
+
     :hover {
         cursor: pointer;
     }
 
     &.positive {
-        color: lime;
+        color: colors.$positive-color;
+    }
+
+    &.negative {
+        color: colors.$negative-color;
+    }
+
+    &.neutral {
+        color: colors.$neutral-color;
+    }
+
+    &.primary {
+        border: 1px solid black;
     }
 }
