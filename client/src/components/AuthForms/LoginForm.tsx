@@ -27,7 +27,11 @@ export function LoginForm(): ReactElement {
                 {...register("password")}
                 type="Password"
             />
-            <Button onClick={handleSubmit(onSubmit)} icon={faSignIn} />
+            <Button
+                onClick={handleSubmit(onSubmit)}
+                icon={faSignIn}
+                tone="positive"
+            />
         </Form>
     );
 }

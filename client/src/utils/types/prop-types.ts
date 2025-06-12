@@ -1,3 +1,3 @@
 export interface ITakeCssClasses {
-    cssClasses?: string[];
+    cssClasses?: string | string[];
 }

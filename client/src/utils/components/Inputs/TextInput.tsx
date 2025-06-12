@@ -1,30 +1,25 @@
-import { memo, useId, useMemo } from "react";
+import { memo, useId } from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
 import "../../../styles/styles.scss";
+import { ITakeCssClasses, useCombineCssClasses } from "@utils";
 
 interface IProps
     extends React.DetailedHTMLProps<
-        React.InputHTMLAttributes<HTMLInputElement>,
-        HTMLInputElement
-    > {
+            React.InputHTMLAttributes<HTMLInputElement>,
+            HTMLInputElement
+        >,
+        ITakeCssClasses {
     labelText: string;
     register?: UseFormRegisterReturn;
-    className?: string;
 }
 
 export const TextInput = memo((props: IProps) => {
-    const { labelText, register, className, ...passThroughProps } = props;
+    const { labelText, register, cssClasses, ...passThroughProps } = props;
 
     // Generate a unique ID for the element
     const uniqueId = useId();
 
-    const baseClass = "TextInput underline";
-
-    const classes = useMemo(() => {
-        return className === undefined
-            ? baseClass
-            : baseClass + " " + className;
-    }, []);
+    const classes = useCombineCssClasses("_Input", "TextInput", cssClasses);
 
     return (
         <input

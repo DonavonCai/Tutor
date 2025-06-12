@@ -1,13 +1,13 @@
 import { useMemo } from "react";
 
 export const useCombineCssClasses = (
-    baseClass: string,
-    additionalClasses: string[] | undefined
+    ...classes: (string | string[] | undefined)[]
 ) => {
     const combinedClasses: string = useMemo(() => {
-        return additionalClasses
-            ? baseClass + " " + additionalClasses.join(" ")
-            : baseClass;
-    }, [additionalClasses, baseClass]);
+        return classes
+            .flat() // Convert to a single array of strings | undefined
+            .filter(Boolean) // Remove falsy values
+            .join(" "); // Separate with spaces
+    }, [classes]);
     return combinedClasses;
 };

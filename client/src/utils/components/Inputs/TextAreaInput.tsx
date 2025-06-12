@@ -1,25 +1,24 @@
-import { memo, useId, useMemo } from "react";
+import { memo, useId } from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
+import { ITakeCssClasses, useCombineCssClasses } from "@utils";
 
 interface IProps
     extends React.DetailedHTMLProps<
-        React.TextareaHTMLAttributes<HTMLTextAreaElement>,
-        HTMLTextAreaElement
-    > {
+            React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+            HTMLTextAreaElement
+        >,
+        ITakeCssClasses {
     labelText: string;
     register?: UseFormRegisterReturn;
-    className?: string;
 }
 
 export const TextAreaInput = memo((props: IProps) => {
-    const { labelText, register, className, ...passThroughProps } = props;
+    const { labelText, register, cssClasses, ...passThroughProps } = props;
 
     // Generate a unique ID for the element
     const uniqueId = useId();
 
-    const classes = useMemo(() => {
-        return className === undefined ? "TextInput" : "TextInput " + className;
-    }, []);
+    const classes = useCombineCssClasses("_Input", "TextAreaInput", cssClasses);
 
     return (
         <textarea

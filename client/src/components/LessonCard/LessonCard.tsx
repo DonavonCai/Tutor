@@ -17,7 +17,7 @@ export function LessonCard(props: IProps): ReactElement {
     const { plan } = props;
     const { title, sections } = plan;
     return (
-        <Card cssClasses={["LessonCard"]} title={title}>
+        <Card cssClasses={"LessonCard"} title={title}>
             <div className="lessonContentsContainer">
                 {sections.map((section: string) => {
                     return (

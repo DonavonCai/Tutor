@@ -7,7 +7,6 @@ import "./Paginator.scss";
 
 interface IProps extends ITakeCssClasses {
     children: ReactElement[];
-    cssClasses?: string[];
 }
 
 // TODO: might be a good candidate for memoization

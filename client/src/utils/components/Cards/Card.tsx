@@ -7,7 +7,6 @@ import { ITakeCssClasses } from "../../types";
 interface IProps extends ITakeCssClasses {
     children: ReactElement;
     title: string;
-    cssClasses?: string[];
 }
 
 export const Card = memo((props: IProps) => {

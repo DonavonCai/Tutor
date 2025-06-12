@@ -1,24 +1,29 @@
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { memo } from "react";
+import { useCombineCssClasses } from "@utils";
 
 import "./Button.scss";
 
 interface IProps {
-    icon: IconDefinition;
     onClick(): void;
-    flavor?: "positive" | "neutral";
+    icon: IconDefinition;
+    tone?: "positive" | "neutral" | "negative";
+    weight?: "primary" | "secondary";
 }
 
 export const Button = memo((props: IProps) => {
-    const { icon, onClick, flavor } = props;
+    const { icon, onClick, tone, weight } = props;
+
+    const classes = useCombineCssClasses(
+        "Button",
+        tone !== undefined ? [tone] : undefined,
+        weight !== undefined ? [weight] : undefined
+    );
 
     return (
-        <button className={"Button"} onClick={onClick}>
-            <FontAwesomeIcon
-                icon={icon}
-                color={flavor === "positive" ? "green" : "yellow"}
-            />
+        <button className={classes} onClick={onClick}>
+            <FontAwesomeIcon icon={icon} color={tone} />
         </button>
     );
 });

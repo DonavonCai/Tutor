@@ -1,4 +1,13 @@
 .Form {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    width: 40%;
+    gap: 0.65rem;
+
+    ._Input {
+        padding: 0.35rem;
+        max-width: 100%;
+        border: 0;
+        border-radius: 7px;
+    }
 }
