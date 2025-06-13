@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import { LoginPage } from "./pages/LoginPage";
-import { Register } from "./pages/Register";
+import { RegisterPage } from "./pages/RegisterPage";
 import { HomePage } from "./pages/HomePage";
 import { NotFound } from "./pages/NotFound";
 import { LessonHubPage } from "./pages/LessonHubPage";
 
 function RegisterAndLogout() {
     // localStorage.clear();
-    return <Register />;
+    return <RegisterPage />;
 }
 
 function App() {

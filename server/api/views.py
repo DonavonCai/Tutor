@@ -17,6 +17,9 @@ class CreateUserView(generics.CreateAPIView):
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
 
+    def post(self, request):
+        return Response({"success": True}, status=status.HTTP_200_OK)
+
 
 class PromptView(APIView):
     serializer_class = PromptSerializer
